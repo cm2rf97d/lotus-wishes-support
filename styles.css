@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+  --paper: #f8f2e2;
+  --surface: #fffdf7;
+  --ink: #3f2b23;
+  --muted: #6d5a49;
+  --gold: #8b6828;
+  --line: #e4d5b3;
+  --soft: #f1e6cd;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  background: var(--paper);
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--gold); text-underline-offset: .22em; }
+a:hover { color: var(--ink); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; border-radius: 4px; }
+.skip-link { position: absolute; left: 1rem; top: -8rem; padding: .6rem 1rem; background: var(--surface); z-index: 2; }
+.skip-link:focus { top: 1rem; }
+.preview-notice { margin: 0; padding: .7rem 1.25rem; background: var(--soft); border-bottom: 1px solid var(--line); text-align: center; font-size: .88rem; }
+.preview-notice strong { display: inline-block; margin-right: .6rem; }
+.page-shell { width: min(100% - 2.5rem, 58rem); margin-inline: auto; }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding-block: 1.4rem; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1.1rem; min-height: 44px; }
+.brand img { width: 48px; height: 48px; border-radius: 12px; }
+nav { display: flex; gap: .35rem 1.1rem; flex-wrap: wrap; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .94rem; }
+nav a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+main { padding-block: 2.8rem 3.5rem; }
+.hero { max-width: 43rem; margin-bottom: 2rem; }
+.eyebrow { color: var(--gold); font-size: .86rem; font-weight: 650; letter-spacing: .06em; margin: 0 0 .5rem; }
+h1, h2, h3 { line-height: 1.45; text-wrap: pretty; }
+h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin: 0 0 .7rem; letter-spacing: .02em; }
+h2 { font-size: 1.35rem; margin: 2rem 0 .9rem; }
+h3 { font-size: 1.1rem; margin: 0 0 .55rem; }
+p { margin: .7rem 0; }
+.lead { color: var(--muted); font-size: 1.08rem; }
+.meta { font-size: .86rem; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.card, .contact, .summary { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.5rem; }
+.card p { color: var(--muted); }
+.card a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; }
+.summary { border-left: 4px solid var(--gold); margin-bottom: 2rem; }
+.summary p:first-child { margin-top: 0; }
+.summary p:last-child { margin-bottom: 0; }
+.document { max-width: 44rem; }
+.document section + section { margin-top: 1.8rem; }
+.document ul { padding-left: 1.35rem; }
+.document li + li { margin-top: .4rem; }
+.contact { margin-top: 2rem; }
+.contact h2 { margin-top: 0; }
+.contact-address a { overflow-wrap: anywhere; }
+.contact-placeholder { padding: .8rem 1rem; background: var(--soft); border-radius: 10px; font-weight: 650; }
+.faq-group { margin-bottom: 2rem; }
+details { padding: 1rem 1.15rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; margin-bottom: .65rem; }
+summary { cursor: pointer; font-weight: 650; min-height: 44px; align-content: center; padding-block: .25rem; }
+summary::marker { color: var(--gold); }
+details p, details li { color: var(--muted); }
+details p:last-child { margin-bottom: .15rem; }
+.site-footer { border-top: 1px solid var(--line); padding-block: 1.5rem 2rem; color: var(--muted); font-size: .86rem; }
+.site-footer p { margin: .2rem 0; }
+@media (max-width: 600px) {
+  .page-shell { width: min(100% - 2rem, 58rem); }
+  .site-header { align-items: flex-start; flex-direction: column; gap: .45rem; padding-block: 1rem; }
+  nav { gap: .3rem 1.25rem; }
+  main { padding-top: 2rem; }
+  .cards { grid-template-columns: 1fr; }
+  .card, .contact, .summary { padding: 1.15rem; }
+  .preview-notice strong { display: block; margin-right: 0; }
+}
+@media print {
+  :root { background: white; color: black; }
+  .skip-link, nav { display: none; }
+  .page-shell { width: 100%; }
+  .card, .contact, .summary, details { break-inside: avoid; }
+  details::details-content { display: block; }
+}
