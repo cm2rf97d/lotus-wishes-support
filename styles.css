@@ -15,6 +15,7 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
+main { overflow-wrap: anywhere; }
 a { color: var(--gold); text-underline-offset: .22em; }
 a:hover { color: var(--ink); }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; border-radius: 4px; }
@@ -29,6 +30,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline
 nav { display: flex; gap: .35rem 1.1rem; flex-wrap: wrap; }
 nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .94rem; }
 nav a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+.languages { padding-top: .5rem; }
 main { padding-block: 2.8rem 3.5rem; }
 .hero { max-width: 43rem; margin-bottom: 2rem; }
 .eyebrow { color: var(--gold); font-size: .86rem; font-weight: 650; letter-spacing: .06em; margin: 0 0 .5rem; }
